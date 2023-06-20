@@ -71,11 +71,12 @@
     
     <?php
     //for each hotel in $hotels print all informations
-    foreach ($hotels as $hotel) {
-        echo "<div>";
-            echo "<pre>";
-            var_dump($hotel);
-            echo "</pre>";
+    foreach ($hotels as $k => $hotel) {
+        echo "<div class='border p-3'>";
+        echo "<h3>HOTEL NUMBER " . $k + 1 . "</h3>";
+        foreach ($hotel as $key => $value) {
+            echo $key . " => " . $value . "<br /><br />";
+        }
         echo "</div>";
     }
     ?>
