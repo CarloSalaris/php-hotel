@@ -76,6 +76,10 @@
                     echo "<tr>";
                     echo "<th scope='row'>" . $k + 1 . "</th>";
                     foreach ($hotel as $key => $value) {
+
+                        if ($key == 'parking' && $value == true) {
+                            $value = '&#x2713;';
+                        }
                         echo "<td>" . $value . "</td>";
                     }
                     echo "</tr>";
