@@ -67,19 +67,37 @@
     ?>
 
 <div class="container my-5">
-    <h1 class="text-center">LIST OF HOTELS</h1>
-    
-    <?php
-    //for each hotel in $hotels print all informations
-    foreach ($hotels as $k => $hotel) {
-        echo "<div class='border p-3'>";
-        echo "<h3>HOTEL NUMBER " . $k + 1 . "</h3>";
-        foreach ($hotel as $key => $value) {
-            echo $key . " => " . $value . "<br /><br />";
-        }
-        echo "</div>";
-    }
-    ?>
+    <h1 class="text-center mb-4">LIST OF HOTELS</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <?php
+                //print each key in single hotel
+                foreach ($hotels[0] as $key => $value) {               
+                    echo "<th scope='col'>" . $key . "</th>";
+                }
+                ?>  
+            </tr>
+        </thead>
+        
+        <tbody>
+
+            <?php
+                //for each hotel in $hotels print all informations
+                foreach ($hotels as $k => $hotel) {
+                    echo "<tr>";
+                    echo "<th scope='row'>" . $k + 1 . "</th>";
+                    foreach ($hotel as $key => $value) {
+                        echo "<td>" . $value . "</td>";
+                    }
+                    echo "</tr>";
+                }
+            ?>
+
+        </tbody>
+    </table>
 </div>
     
 </body>
