@@ -63,31 +63,35 @@
 
 <body>
 
-<form>
-    <!-- FILTRO PARCHEGGIO -->
-    <label for="parcheggio">Parcheggio</label>
-    <br>
-    <input type="radio" id="parking_yes" name="parking" value="yes">
-    <label for="parking_yes">Yes</label>
-    <input type="radio" id="parking_no" name="parking" value="no">
-    <label for="parking_no">No</label>
-    <br>
-    <!-- FILTRO RATING -->
-    <label for="vote">Vote</label>
-    <select name="vote" id="vote">
-        <option value="-1">SELEZIONA VOTO MINIMO</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <br>
-    <!-- SUBMIT VALUE -->
-    <input type="submit" value="SEARCH">
-</form>
-
 <div class="container my-5">
+
+    <form>
+        <!-- FILTRO PARCHEGGIO -->
+        <section class="mb-1">
+            <label for="parcheggio">Parcheggio: </label>
+            <input type="radio" id="parking_yes" name="parking" value="yes">
+            <label for="parking_yes">Yes</label>
+            <input type="radio" id="parking_no" name="parking" value="no">
+            <label for="parking_no">No</label>
+        </section>
+        <br>
+        <!-- FILTRO RATING -->
+        <section class="mb-1">
+            <label for="vote">Rating: </label>
+            <select name="vote" id="vote">
+                <option value="-1">SELEZIONA VOTO MINIMO</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </section>
+        <br>
+        <!-- SUBMIT VALUE -->
+        <input type="submit" value="SEARCH">
+    </form>
+
     <h1 class="text-center mb-4">LIST OF HOTELS</h1>
 
     <table class="table">
