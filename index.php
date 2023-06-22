@@ -109,8 +109,8 @@
                     //print each key in single hotel
                     foreach ($hotels[0] as $key => $value) {               
                         echo "<th scope='col'>" . $key . "</th>";
-                    }
-                ?>   -->
+                    };
+                    ?>   -->
             </tr>
         </thead>
         
@@ -124,24 +124,28 @@
                         || ($parking === "yes" && $hotel['parking'])
                         || ($parking === "no" && !$hotel['parking']))
                      && $vote <= $hotel['vote']) {
-                        
-                        echo "<tr>";
-                        echo "<td>" . $hotel['name'] . "</td>";
-                        echo "<td>" . $hotel['description'] . "</td>";
-                        echo "<td class='text-center'>" . ($hotel['parking'] ? "yes" : "no") . "</td>";
-                        echo "<td class='text-center'>" . $hotel['vote'] . "/5</td>";
-                        echo "<td class='text-center'>" . $hotel['distance_to_center'] . " km</td>";
-                        
-                        /* ALTERNATIVA CON FOREACH */
-                        /* foreach ($hotel as $key => $value) {
+            ?>    
+                        <tr>
+                            <td> <?php echo $hotel['name'] ?> </td>
+                            <td> <?php echo $hotel['description'] ?> </td>
+                            <td class='text-center'> <?php echo $hotel['parking'] ? "yes" : "no" ?> </td>
+                            <td class='text-center'> <?php echo $hotel['vote'] ?> /5</td>
+                            <td class='text-center'> <?php echo $hotel['distance_to_center'] ?> km</td>
+                            
+                            <!-- ALTERNATIVA CON FOREACH -->
+                            
+                            <!-- 
+                                foreach ($hotel as $key => $value) {
 
-                            if ($key == 'parking' && $value) {
-                                $value = '&#x2713;';
-                            }
-                            echo "<td>" . $value . "</td>";
-                        } */
+                                if ($key == 'parking' && $value) {
+                                    $value = '&#x2713;';
+                                }
+                                echo "<td>"; . $value . "</td>";
+                            } -->
+                            
                         
-                        echo "</tr>";
+                        </tr>
+            <?php
                     }
                 }
             ?>
